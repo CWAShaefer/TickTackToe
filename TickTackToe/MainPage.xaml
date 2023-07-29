@@ -1,0 +1,57 @@
+﻿<Page
+    x:Class="TickTackToe.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TickTackToe"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Grid Margin="15,15,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+                <ColumnDefinition Width="125"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="125"/>
+                <RowDefinition Height="125"/>
+                <RowDefinition Height="125"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="3" Text="Let's Play TickTackToe!" HorizontalAlignment="Center" TextWrapping="WrapWholeWords" TextAlignment="Center" VerticalAlignment="Center" FontSize="40"/>
+
+            <TextBlock x:Name="txtAILevelLabel"         Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">AI Level</TextBlock>
+            <ComboBox  x:Name="cboAILevel"              Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"  Height="50" Width="150" Margin="40,40,0,0"/>
+            <TextBlock x:Name="txtPlayerSelectLabel"    Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="22">Play As</TextBlock>
+            <ComboBox  x:Name="cboPlayerSelect"         Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2"  Height="50" Width="150" Margin="40,40,0,0"/>
+            
+            <Button x:Name="btnGameStart" Content="Start Game"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Height="80" Width="200" FontSize="22" HorizontalAlignment="Center" Click="btnGameStart_Click" TabIndex="10"/>
+
+
+            <Button x:Name="btn0" Tag="0" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="1" Grid.Column="0" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="1"/>
+            <Button x:Name="btn1" Tag="1" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="1" Grid.Column="1" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="2"/>
+            <Button x:Name="btn2" Tag="2" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="1" Grid.Column="2" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="3"/>
+            <Button x:Name="btn3" Tag="3" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="2" Grid.Column="0" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="4"/>
+            <Button x:Name="btn4" Tag="4" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="2" Grid.Column="1" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="5"/>
+            <Button x:Name="btn5" Tag="5" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="2" Grid.Column="2" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="6"/>
+            <Button x:Name="btn6" Tag="6" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="3" Grid.Column="0" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="7"/>
+            <Button x:Name="btn7" Tag="7" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="3" Grid.Column="1" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="8"/>
+            <Button x:Name="btn8" Tag="8" Visibility="Collapsed" IsEnabled="False" Content="?" Grid.Row="3" Grid.Column="2" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="72" Click="btn_Click" TabIndex="9"/>
+
+            <TextBlock x:Name="txtStatus" Grid.Row="4" Grid.ColumnSpan="3" Text="Ready Player 'X'..." TextWrapping="Wrap" VerticalAlignment="Top" FontSize="22" TextAlignment="Center"/>
+            <TextBlock x:Name="txtXWins"    TextAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="0" Text="Player X Wins: 0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="24"/>
+            <TextBlock x:Name="txtOWins"    TextAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="1" Text="Player O Wins: 0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="24"/>
+            <TextBlock x:Name="txtScratch"  TextAlignment="Center" HorizontalAlignment="Center" Grid.Row="5" Grid.Column="2" Text="Scratch Games: 0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="24"/>
+
+            <Button x:Name="btnReset" Content="Reset Board" IsEnabled="False" Grid.Row="6" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Top" Width="317" Height="50" FontSize="24" Click="btnReset_Click" TabIndex="11"/>
+
+        </Grid>
+    </StackPanel>
+
+</Page>
